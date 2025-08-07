@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: NDX Mock API
+  version: 1.0.0
+paths:
+  /ndx/division:
+    get:
+      summary: Get Division Data
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples:
+                sample:
+                  value:
+                    division: "Kurunegala"
+                    population: 150000
+                    schools_required: 12
