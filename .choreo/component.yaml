@@ -1,6 +1,0 @@
-schemaVersion: 1.0
-endpoints:
-  - name: ndx-api-endpoint
-    service:
-      port: 80
-    type: REST
