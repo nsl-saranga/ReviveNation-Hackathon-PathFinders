@@ -39,7 +39,7 @@ The system follows a modular, web-based architecture with cloud data storage. Ke
 | DPI Layer | Purpose                                                                                         | Implementation (MVP Phase)                                 |
 | --------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | SLUDI     | Secure, decentralized login for zonal/central admins                                            | Mock login with role-based tokens (e.g., SLUDI-auth-token) |
-| NDX       | Fetch and update official building metadata (status, use, type, condition, location)            | Simulated NDX API returning JSON zone metadata             |
+| NDX       | Fetch and update official building metadata (status, use, type, condition, location)            | Simulated NDX API returning JSON metadata             |
 | PayDPI    | Record/track renovation fund allocation and usage                                               | Simulated transaction with amount, date, and building ID   |
 
 
@@ -76,5 +76,6 @@ The system follows a modular, web-based architecture with cloud data storage. Ke
 
 * Frontend: React + CSS + tailwind css
 * Backend: Node.js (Express)
+
 
 
