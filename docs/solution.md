@@ -20,25 +20,18 @@ The system follows a modular, web-based architecture with cloud data storage. Ke
 
 2. Backend Server (API)
 
-   * Handles all application logic and routes requests between frontend and database.
-   * Exposes RESTful API endpoints for login (via SLUDI), CRUD operations on buildings, PayDPI transaction simulation, and zone metadata retrieval.
+   * Handles all application logic and routes requests between UI and NDX.
+   * Exposes RESTful API endpoints for login (via SLUDI), PayDPI transaction simulation, and building metadata retrieval and update (status, use type, condition, location).
    * Enforces role-based access so that each user can only access and edit permitted data.
 
-3. Database 
 
-   * A secure, cloud-based database (MongoDB Atlas) to store:
-        1. Building metadata: status, use type, condition, location
-        2. User profiles and roles
-        3. Renovation history and update logs
-        4. PayDPI-style transaction records
-
-4. DPI Integration Layer
+3. DPI Integration Layer
 
    * A logical module that interfaces with national Digital Public Infrastructure components:
         1. SLUDI: for secure and decentralized user login
-        2. NDX: to fetch reliable government metadata about zones and population
+        2. NDX: to fetch and update building metadata
         3. PayDPI: to simulate or execute transactions related to renovation or maintenance funding
-   * For the MVP, these integrations can be mocked or simulated.
+   * For the MVP, these integrations are mocked and simulated.
 
 
 ## 🔗 DPI Integrations
@@ -46,7 +39,7 @@ The system follows a modular, web-based architecture with cloud data storage. Ke
 | DPI Layer | Purpose                                                                                         | Implementation (MVP Phase)                                 |
 | --------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | SLUDI     | Secure, decentralized login for zonal/central admins                                            | Mock login with role-based tokens (e.g., SLUDI-auth-token) |
-| NDX       | Fetch official zone metadata (population, infrastructure data) to contextualize building status | Simulated NDX API returning JSON zone metadata             |
+| NDX       | Fetch and update official building metadata (status, use, type, condition, location)            | Simulated NDX API returning JSON zone metadata             |
 | PayDPI    | Record/track renovation fund allocation and usage                                               | Simulated transaction with amount, date, and building ID   |
 
 
@@ -79,10 +72,9 @@ The system follows a modular, web-based architecture with cloud data storage. Ke
 * Consent flags (future enhancement) will track who edited which records, with audit trails.
 
 
-## 🔧 Technologies Using (for POC)
+## 🔧 Technologies Using
 
 * Frontend: React + CSS + tailwind css
 * Backend: Node.js (Express)
-* Database: MongoDB Atlas
 
 
